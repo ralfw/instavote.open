@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Trainings</title>
+</head>
+<body>
+    <h3>Trainings of @Model.TrainerMatchcode</h3>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Matchcode</td>
+            </tr>
+        </thead>
+        <tbody>
+            @Each.Trainings
+            <tr>
+                <td><a href="/training/@Current.Id">@Current.Matchcode</a></td>
+            </tr>
+            @EndEach
+        </tbody>
+    </table>
+    <br/>
+    <form method="post" action="/trainings/@Model.TrainerMatchcode">
+        Matchcode <input type="text" name="NewTrainingMatchcode"/> <input type="submit" value="Add training"/>
+    </form>
+    <b>@Model.Error</b>
+</body>
+</html>

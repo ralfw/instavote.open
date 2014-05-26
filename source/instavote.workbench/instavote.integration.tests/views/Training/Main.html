@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Training</title>
+</head>
+<body>
+    <h3>Training @Model.TrainingMatchcode - Attendees and Scores</h3>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td></td>
+                <td>Attendee</td>
+                <td>Score</td>
+            </tr>
+        </thead>
+        <tbody>
+            @Each.Votes
+            <tr>
+                <td>#@Current.Pos</td>
+                <td>@Current.Name, @Current.Email</td>
+                <td>@Current.Score</td>                     
+            </tr>
+            @EndEach
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>Avg. score</td>
+                <td>@Model.AverageScore</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br/>
+    <b>Suggestions</b>
+    <ul>
+        @Each.Suggestions
+        <li>@Current</li>
+        @EndEach
+    </ul>
+    <br/>
+    <b>Mailing list:</b> @Model.Mailinglist
+    <br/><br/>
+    <a href="/download/@Model.TrainingMatchcode">Download as CSV file</a>
+</body>
+</html>

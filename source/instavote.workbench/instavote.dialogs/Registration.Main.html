@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style2.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Signika:600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <title>Registration</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1 class="text-right instalogo">insta<span class="instalogovote">vote</span></h1>
+    </div>
+    <div class="well well-lg">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Registration for training '@Model.TrainingMatchcode'</h2>
+                
+                <form class="form" method="post" action="/register">
+                    <input type="hidden" name="TrainingMatchcode" value="@Model.TrainingMatchcode" />
+                    <div class="form-group">
+                        <label class="sr-only" for="Name">Your name:</label>
+                        <input class="form-control" placeholder="Your name" id="Name" name="Name" type="text" value="@Model.Name" />
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="Email">Your email:</label>
+                        <input class="form-control" placeholder="Your email" id="Email" name="Email" type="text" value="@Model.Email" />
+                    </div>
+                    
+                    <input class="btn btn-primary pull-right" type="submit" value="Submit" />
+                </form>
+                
+<!--                @If.Model.Error-->
+<!--                <div class="alert alert-danger"><strong>Warning!</strong> @Model.Error</div>-->
+<!--                @EndIf-->
+            
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
